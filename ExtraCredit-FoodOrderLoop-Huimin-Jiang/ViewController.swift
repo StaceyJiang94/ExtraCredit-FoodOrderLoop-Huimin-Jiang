@@ -56,10 +56,12 @@ class ViewController: UIViewController {
     @IBAction func addToCartButtonClicked(_ sender: UIButton) {
         var totalCost = 0.0
         var allFoodAdd = ""
+        
+        foodImageView.tag = foodIndex
 
-        chosenFoodNameArray.append(foodNameArray[foodIndex])
+        chosenFoodNameArray.append(foodNameArray[foodImageView.tag])
 
-        chosenFoodPriceArray.append(foodPriceArray[foodIndex])
+        chosenFoodPriceArray.append(foodPriceArray[foodImageView.tag])
 
         for count in 0...chosenFoodNameArray.count-1{
             allFoodAdd = allFoodAdd + "\n \(chosenFoodNameArray[count]) : $ \(chosenFoodPriceArray[count])"
